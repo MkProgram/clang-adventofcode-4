@@ -1,5 +1,6 @@
 #include "paper_grid.h"
 #include <stdbool.h>
+#include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -45,13 +46,13 @@ char **create_grid_from_file(FILE *file, size_t *out_count) {
   return grid;
 }
 
-size_t count_neighboring_papers(char **grid, int row, int col, size_t max_rows,
-                                size_t max_cols) {
+size_t count_neighboring_papers(char **grid, size_t row, size_t col,
+                                size_t max_rows, size_t max_cols) {
   size_t count = 0;
 
   for (size_t i = 0; i < sizeof(neightbors) / sizeof(neightbors[0]); i++) {
-    int nrow = row + neightbors[i][0];
-    int ncol = col + neightbors[i][1];
+    int nrow = (int)row + neightbors[i][0];
+    int ncol = (int)col + neightbors[i][1];
     if (!in_bounds(ncol, nrow, max_rows, max_cols)) {
       continue;
     }
@@ -78,7 +79,7 @@ void free_grid(char **grid, size_t size) {
   free(grid);
 }
 
-int process_from_file(FILE *file) {
+size_t process_from_file(FILE *file) {
 
   size_t max_rows = 0;
   size_t max_cols = 0;

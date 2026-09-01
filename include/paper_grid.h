@@ -2,6 +2,6 @@
 #define PAPER_GRID_H
 
 #include <stdio.h>
-int process_from_file(FILE *file);
+size_t process_from_file(FILE *file);
 
 #endif // !PAPER_GRID_H

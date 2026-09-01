@@ -7,10 +7,10 @@ int main(void) {
   puts("Lets count some paper!");
   FILE *file = fopen("paper_grid.txt", "r");
 
-  int paper_count = process_from_file(file);
+  size_t paper_count = process_from_file(file);
 
   fclose(file);
 
-  printf("Paper count is: %d\n", paper_count);
+  printf("Paper count is: %d\n", (int)paper_count);
   return EXIT_SUCCESS;
 }

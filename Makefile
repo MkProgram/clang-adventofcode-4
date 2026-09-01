@@ -1,5 +1,5 @@
 CC       := clang
-CFLAGS   := -std=gnu11 -Wall -Wextra -Wpedantic -Iinclude -g
+CFLAGS   := -std=gnu11 -Wall -Wextra -Wpedantic -Wconversion -Iinclude -g
 SANFLAGS := -fsanitize=address,undefined
 
 BIN_NAME := paper_count
