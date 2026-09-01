@@ -11,7 +11,7 @@ struct GRID_CASES {
 int test_process_grid_file(void) {
   int failures = 0;
 
-  struct GRID_CASES cases[] = {{"Example file", "tests/example.txt", 13}};
+  struct GRID_CASES cases[] = {{"Example file", "tests/example.txt", 43}};
   for (size_t i = 0; i < sizeof cases / sizeof cases[0]; ++i) {
     FILE *file = fopen(cases[i].floc, "r");
 
