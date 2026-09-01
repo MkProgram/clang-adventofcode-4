@@ -22,6 +22,7 @@ int test_process_grid_file(void) {
               cases[i].expected, actual);
       ++failures;
     }
+    fclose(file);
   }
 
   return failures;
